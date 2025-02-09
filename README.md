@@ -70,6 +70,3 @@ Para mais detalhes sobre as análises e conclusões, consulte [docs/README_ANALI
 - Plotly
 - Streamlit
 
-## Autor
-
-[Seu Nome]
