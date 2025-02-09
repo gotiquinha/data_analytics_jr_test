@@ -1,37 +1,75 @@
-# **Desafio - Data Analytics**
+# Análise de Dados - Escolas Municipais de São Paulo
 
-Neste desafio buscamos avaliar sua habilidade em análise de dados, utilizando SQL, Python, e storytelling. O desafio consiste em realizar uma análise exploratória dos dados fornecidos, que compreendem informações sobre alunos e escolas na cidade de São Paulo entre 2010 e 2023. Os conjuntos de dados estão disponíveis na pasta **Data**, incluindo arquivos CSV das escolas e do perfil dos educandos.
+Este projeto contém a análise dos dados das escolas municipais de São Paulo, desenvolvida como parte do teste para a posição de Analista de Dados Jr.
 
-## **Dados Disponíveis:**
+## Estrutura do Projeto
 
-O banco de dados consiste em mais de +2 milhões de registros, contendo informações detalhadas sobre alunos e escolas. Os atributos de cada tabela estão definidos nos respectivos dicionários de dados.
+```
+.
+├── data/               # Dados brutos e processados
+│   ├── Data/          # Dados originais em CSV
+│   ├── graficos/      # Gráficos gerados
+│   └── dados/         # Datasets processados
+├── docs/              # Documentação
+│   └── README_ANALISE.md  # Análise detalhada
+├── src/               # Códigos fonte
+│   ├── carregar_dados.py    # ETL dos dados
+│   ├── criar_relacoes.py    # Criação de relações
+│   ├── analise_exploratoria.py  # Análises básicas
+│   ├── analise_geografica.py    # Análises geográficas
+│   └── app.py        # Aplicativo Streamlit
+└── requirements.txt   # Dependências do projeto
+```
 
-1. 🎲 Escolas (*Diretório com arquivos .csv*)
-2. 🎲 Perfil dos educandos (*Diretório com arquivos .csv*)
-3. ℹ️ Test.md (*Arquivo com as questões do teste)
-4. ℹ️ README.md (*Arquivo informações*)
+## Instalação
 
-## **Instruções:**
+1. Clone este repositório
+2. Instale as dependências:
+```bash
+pip install -r requirements.txt
+```
 
-Seu objetivo é desenvolver um script ou programa em SQL/Python para resolver as questões propostas no arquivo **Test.md**. Você deve processar todos os arquivos de dados fornecidos, realizando as transformações e limpezas necessárias para garantir que os dados possam ser utilizados para extrair insights relevantes.
+## Executando o Projeto
 
-Para facilitar a avaliação, siga estas instruções:
+1. Carregue os dados para o SQLite:
+```bash
+python src/carregar_dados.py
+```
 
-- [ ] Faça o upload dos arquivos CSV para um banco SQLite.
-- [ ] Respeite a tipagem dos dados e o nome das colunas ao criar as tabelas no banco de dados.
-- [ ] Desenvolva consultas SQL para responder às perguntas do teste.
-- [ ] Organize seu código em pastas separadas, mantendo a estrutura de pastas fornecida.
-- [ ] Documente sua solução usando comentários ou arquivos README para explicar sua estratégia e o procedimento adotado.
-- [ ] Prepare os commits em branchs separados usando o padrão de nomeação: nome + sobrenome.
+2. Crie as relações entre as tabelas:
+```bash
+python src/criar_relacoes.py
+```
 
-Depois de todas as análises e codificação serem feitas, crie uma solicitação de pull (PR) neste repositório.
+3. Execute as análises:
+```bash
+python src/analise_exploratoria.py
+python src/analise_geografica.py
+```
 
-## **Motivação:**
+4. Visualize os resultados no Streamlit:
+```bash
+streamlit run src/app.py
+```
 
-Este teste avalia sua capacidade de resolver problemas de análise de dados, utilizando habilidades em programação. A capacidade de comunicar seus resultados através de storytelling também será considerada na avaliação.
+## Análises Realizadas
 
-## **Envio da Solução:**
+1. Carregamento e organização dos dados em SQLite
+2. Criação de relações entre escolas e alunos
+3. Análise exploratória dos dados
+4. Análise geográfica das escolas
+5. Visualização interativa com Streamlit
 
-Para enviar sua solução, faça um fork deste repositório e crie um branch com seu nome e sobrenome. Organize os scripts e código em pastas separadas, mantendo a estrutura original dos arquivos fornecidos. Certifique-se de documentar sua solução para facilitar a compreensão do avaliador.
+Para mais detalhes sobre as análises e conclusões, consulte [docs/README_ANALISE.md](docs/README_ANALISE.md).
 
-Certifique-se de completar todas as etapas do desafio e seguir as instruções para enviar sua solução corretamente. Estamos ansiosos para ver sua solução e entender sua abordagem para resolver o problema!
+## Tecnologias Utilizadas
+
+- Python 3.12
+- SQLite
+- Pandas
+- Plotly
+- Streamlit
+
+## Autor
+
+[Seu Nome]
