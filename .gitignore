@@ -1,0 +1,59 @@
+# Ambiente virtual
+venv/
+env/
+ENV/
+
+# Arquivos de banco de dados
+*.db
+*.sqlite
+*.sqlite3
+test_analytics.db
+data_analytics_jr_test/test_analytics.db
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Arquivos de log
+*.log
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.swp
+
+# Arquivos de IDE
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Arquivos de dados grandes
+data/
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.so
+*.so.*
+
+# Outros
+.env
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+__MACOSX/ 
