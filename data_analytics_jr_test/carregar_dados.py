@@ -30,23 +30,24 @@ def carregar_dados_escolas():
         print(f"Erro ao carregar dados: {e}")
         return None
 
-def carregar_dados_alunos():
-    """Carrega os dados dos alunos do banco de dados."""
+def carregar_dados_series():
+    """Carrega os dados de distribuição por série do banco de dados."""
     try:
         conn = criar_conexao()
         query = """
         SELECT 
-            cod_escola,
             serie_ensino,
             COUNT(DISTINCT cd_aluno) as total_alunos
         FROM perfil_alunos
-        GROUP BY cod_escola, serie_ensino
+        GROUP BY serie_ensino
+        ORDER BY total_alunos DESC
+        LIMIT 10
         """
         df = pd.read_sql_query(query, conn)
         conn.close()
         return df
     except Exception as e:
-        print(f"Erro ao carregar dados: {e}")
+        print(f"Erro ao carregar dados das séries: {e}")
         return None
 
 if __name__ == "__main__":
@@ -56,7 +57,7 @@ if __name__ == "__main__":
         print("\nDados das escolas:")
         print(df_escolas.head())
     
-    df_alunos = carregar_dados_alunos()
-    if df_alunos is not None:
-        print("\nDados dos alunos:")
-        print(df_alunos.head()) 
+    df_series = carregar_dados_series()
+    if df_series is not None:
+        print("\nDados das séries:")
+        print(df_series.head()) 
