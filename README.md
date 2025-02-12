@@ -50,11 +50,3 @@ Os dados utilizados neste projeto são provenientes da Secretaria Municipal de E
 ├── requirements.txt        # Dependências do projeto
 └── README.md              # Este arquivo
 ```
-
-## 📝 Licença
-
-Este projeto está sob a licença MIT.
-
-## 🤝 Contribuições
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request. 
